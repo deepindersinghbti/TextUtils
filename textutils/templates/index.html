@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>TextUtils</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">TextUtils</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/deepindersinghbti" target="_blank">GitHub</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="alert alert-primary" role="alert">
+        Welcome to TextUtils!
+    </div>
+
+    <div class="container">
+        <form action="/analyze" method="post"> {% csrf_token %}
+            <div class="form-group">
+                <label for="exampleTextarea">Enter your text here:</label>
+                <textarea class="form-control" name="text" id="exampleTextarea" rows="5"></textarea>
+            </div>
+
+            <div class="form-group">
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" name="removepunc" role="switch" id="customSwitch1">
+                    <label class="form-check-label" for="customSwitch1">Remove Punctuation</label>
+                </div>
+                
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" name="fullcaps" role="switch" id="customSwitch2">
+                    <label class="form-check-label" for="customSwitch2">UPPERCASE</label>
+                </div>
+                
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" name="newlineremover" role="switch" id="customSwitch3">
+                    <label class="form-check-label" for="customSwitch2">New line remover</label>
+                </div>
+
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" name="extraspaceremover" role="switch" id="customSwitch4">
+                    <label class="form-check-label" for="customSwitch4">Extra spaces remover</label>
+                </div>
+
+                <button type="submit" class="btn btn-primary mt-3">Analyze Text</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
